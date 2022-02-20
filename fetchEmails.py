@@ -53,3 +53,4 @@ class fetchEmail():
                     decoded = base64.urlsafe_b64decode(j['body']['data'])
                     decoded = str(decoded, "utf-8")
                     self.html.append(decoded)
+        return self.html
