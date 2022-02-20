@@ -51,6 +51,6 @@ class fetchEmail():
             for j in payload['parts']:
                 if j['mimeType'] == 'text/html':
                     decoded = base64.urlsafe_b64decode(j['body']['data'])
-                    decoded = str(decoded, "utf-8")
+                    decoded = str(decoded, "utf-8").replace('\n', '')
                     self.html.append(decoded)
         return self.html
