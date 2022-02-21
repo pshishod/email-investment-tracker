@@ -48,9 +48,19 @@ class fetchEmail():
         for i in self.message_list['messages']:
             message = self.service.users().messages().get(userId='me', id=i['id']).execute()
             payload = message['payload']
-            for j in payload['parts']:
-                if j['mimeType'] == 'text/html':
-                    decoded = base64.urlsafe_b64decode(j['body']['data'])
-                    decoded = str(decoded, "utf-8").replace('\n', '')
-                    self.html.append(decoded)
+            if payload['mimeType'] == 'text/html':
+                data = payload['body']['data']
+                data = base64.urlsafe_b64decode(data)
+                data = str(data, "utf-8").replace('\n', '')
+                self.html.append(data)                
+            # pprint.pprint(str(base64.urlsafe_b64decode(payload['body']['data']))).replace('\n', '')
+            # try:
+            #     payload['parts']
+            # except:
+            #     continue
+            # for j in payload['parts']:
+            #     if j['mimeType'] == 'text/html':
+            #         decoded = base64.urlsafe_b64decode(j['body']['data'])
+            #         decoded = str(decoded, "utf-8").replace('\n', '')
+            #         self.html.append(decoded)
         return self.html
