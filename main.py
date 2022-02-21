@@ -40,6 +40,8 @@ for i in allTxnDetails:
 cnx.commit()
 cnx.close()
 
+# test
+
 
 
 
