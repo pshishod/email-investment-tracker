@@ -38,8 +38,7 @@ for i in allTxnDetails:
 
 # Commit all the changes to the database and close the connection
 cnx.commit()
-cnx.close()
-
+cnx.close()         
 
 
 
