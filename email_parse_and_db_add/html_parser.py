@@ -60,5 +60,5 @@ class htmlParser():
             txnDetails = mainRowZoomed.find_next_siblings("tr")[5].td.table.tbody
             return self.parse_txn_details(txnDetails)
         except:
-            print(self.htmlObj)
+            # print(self.htmlObj)
             return

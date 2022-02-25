@@ -20,7 +20,7 @@ allTxnDetails = []
 
 # Store the credentials in this array to connect to the local mysql database
 credentials = []
-with open("./database_credentials", "r") as file:
+with open("../database_credentials", "r") as file:
     for line in file:
         credentials.append(line)
 file.close()
