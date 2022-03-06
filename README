@@ -1,0 +1,2 @@
+The requirements.txt file pertains to the backend and the api service, since these are written in python. 
+The frontend is written in Angular, and as such, will require node, npm and ng to run. Moreover, the dependencies required by the angular project are defined in the package.json file inside the frontend folder.
